@@ -8,6 +8,9 @@ Bruna                  Vaclav               8000                      Praha
 Zuda                   David                 12000                    Jihlava
 " > platy.txt
 ```
+- Zde je očekáváný output
+![Úkol 1](../assests/cv4/ukol1.png) 
+
 
 ## Vypište první a třetí sloupec
 ```bash
