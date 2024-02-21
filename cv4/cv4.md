@@ -1,5 +1,4 @@
 ## Table of Contents
-- [Table of Contents](#table-of-contents)
 - [Vytvořte soubor výplaty v tomto tvaru.](#vytvo-te-soubor-v-platy-v-tomto-tvaru)
 - [Vypište první a třetí sloupec](#vypi-te-prvn--a-t-et--sloupec)
 - [Vyberte řádky obsahující slovo Jihlava](#vyberte---dky-obsahuj-c--slovo-jihlava)
