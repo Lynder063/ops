@@ -12,6 +12,8 @@ You can just get around that by putting
 chown {login}:{login} {file_name}
 ```
 
+**And he won't know anything and he'll be happy, and so complications can be avoided**
+
 ## The status of the exercises entered
 All exercises can be found in adequate folders in this rep!
 
