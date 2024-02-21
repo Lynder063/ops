@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# ss
+
+
 # Zrušení přípony html u všech souborů v aktuálním adresáři
 for file in *.html; do
     mv -- "$file" "${file%.html}"
