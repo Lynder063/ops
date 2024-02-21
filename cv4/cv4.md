@@ -16,37 +16,44 @@ Zuda                   David                 12000                    Jihlava
 ```bash
 awk '{print $1, $3}' platy.txt
 ```
-
-## Vyberte řádky obsahující slovo Jihlava
-```bash
-awk '/Jihlava/' platy.txt
-```
+- Zde je očekáváný output
+![Úkol 2](../assests/cv4/ukol2.png) 
 
 ## Vypište 1. , 2. a 4. sloupec pro  řádky obsahující slovo Jihlava
 ```bash
 awk '/Jihlava/{print $1, $2, $4}' platy.txt
 ```
+- Zde je očekáváný output
+![Úkol 3](../assests/cv4/ukol3.png) 
 
 ## Vyberte všechny řádky obsahující v 4. sloupci písmeno P
 ```bash
 awk '$4 ~ /P/' platy.txt
 ```
+- Zde je očekáváný output
+![Úkol 4](../assests/cv4/ukol4.png) 
 
 ## Vyberte všechny řádky obsahující v 4. sloupci první písmeno P
 ```bash
 awk '$4 ~ /^P/' platy.txt
 ```
+- Zde je očekáváný output
+![Úkol 5](../assests/cv4/ukol5.png) 
 
 ## Vyberte všechny pracovníky, kteří mají plat = 12000
 ```bash
 awk '$3 == 12000' platy.txt
 ``` 
+- Zde je očekáváný output
+![Úkol 6](../assests/cv4/ukol6.png)
 
 ## Vyberte všechny pracovníky, kteří mají plat < 12000
 
 ```bash
 awk '$3 < 12000' platy.txt
 ```
+- Zde je očekáváný output
+![Úkol 7](../assests/cv4/ukol7.png)
 
 ## Vyberte všechny pracovníky, kteří mají plat < 20000 a větší než 10000
 
@@ -54,36 +61,50 @@ awk '$3 < 12000' platy.txt
 ```bash
 awk '$3 < 20000 && $3 > 10000' platy.txt
 ```
+- Zde je očekáváný output
+![Úkol 8](../assests/cv4/ukol8.png)
 
 ## Vyberte všechny pracovníky, kteří jsou z Brna nebo z Jihlavy
 ```bash
 awk '$4 == "Brno" || $4 == "Jihlava"' platy.txt
 ```
+- Zde je očekáváný output
+![Úkol 9](../assests/cv4/ukol9.png)
 
 ## Vypište číslo řádku, na kterém je ve sloupci Petr.
 ```bash
 awk '$2 == "Petr" {print NR}' platy.txt
 ```
+- Zde je očekáváný output
+![Úkol 10](../assests/cv4/ukol10.png)
 
 ## Zobrazte 2. a 4. řádek
 ```bash
 awk 'NR==2 || NR==4' platy.txt
 ```
+- Zde je očekáváný output
+![Úkol 11](../assests/cv4/ukol11.png)
 
 ## Vypočtěte průměrný platy
 ```bash
 awk '{sum+=$3} END {print "Průměrný plat: ", sum/NR}' platy.txt
 ```
+- Zde je očekáváný output
+![Úkol 12](../assests/cv4/ukol12.png)
 
 ## Vypočtěte průměrný plat pro všechny pracovníky z Jihlavy.
 ```bash
 awk '$4 == "Jihlava" {sum+=$3; count++} END {print "Průměrný plat pro pracovníky z Jihlavy: ", sum/count}' platy.txt
 ```
+- Zde je očekáváný output
+![Úkol 13](../assests/cv4/ukol13.png)
 
 ## Vypište maximální plat.
 ```bash
 awk 'BEGIN {max=0} $3 > max {max=$3} END {print "Maximální plat: ", max}' platy.txt
 ```
+- Zde je očekáváný output
+![Úkol 14](../assests/cv4/ukol14.png)
 
 ## Vytvořte program, který každé 2 minuty zkopíruje výpis obsahu vybraného adresáře do souboru.
 
@@ -125,3 +146,5 @@ crontab -e
 ```bash
 */2 * * * * cp -r /cesta/ke/zdrojovemu/adresari /cesta/k/cilovemu/adresari
 ```
+- Zde je očekáváný output
+![Úkol 15](../assests/cv4/ukol15.png)
