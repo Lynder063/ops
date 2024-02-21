@@ -1,7 +1,19 @@
-# OPS
-## Kryštof Malinda (2024)
+# Operating Systems 2024
+## Created by Christopher Malinda
 
-## Status of completition
+## Information
+Since the teacher is an idiot, he demands that everything be done via VMs in the school's EIT computer lab.
+So after communicating with the teacher, who absolutely did not want to cooperate, he told me in a maximum annoyance that it could be done from his own PC.
+
+You can just get around that by putting 
+
+
+```bash
+chown {login}:{login} {file_name}
+```
+
+## The status of the exercises entered
+All exercises can be found in adequate folders in this rep!
 
 - [ ] cv1
 - [x] cv2
@@ -15,3 +27,4 @@
 - [ ] cv10
 - [ ] cv11
 - [ ] cv12
+
