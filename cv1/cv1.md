@@ -56,6 +56,9 @@ chmod 511 text4
 chmod 762 text5
 ```
 
+> [!IMPORTANT]
+> Já všechno dávám v číslech ale je možnost prává nastavovat písmeny 
+
 ## V domovském adresáři uživatele vas_login vytvořte adresář pokus s těmito právy rwxr--r--.
 > [!NOTE]
 > Do tohoto adresáře zkopírujte soubor text1 a přepněte se do adresáře pokus.
@@ -79,3 +82,11 @@ chmod 744 pokus
 cp text1 pokus/
 cd pokus/
 ```
+
+- Nastavíme požadovné práva
+```bash
+chmod 644 ../pokus
+```
+- Odpověď na otázku je že, **že nebudeme moct cokoliv dělat se složkou**
+
+
