@@ -4,6 +4,9 @@
 
 
 # Zrušení přípony html u všech souborů v aktuálním adresáři
+# Tento cyklus prohledá v aktualní složce všechny soubory co končí .html
+# A pak smažeme '.html' z naleznutých html souborů
+
 for file in *.html; do
     mv -- "$file" "${file%.html}"
 done
