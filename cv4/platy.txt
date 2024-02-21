@@ -1,0 +1,5 @@
+Novak                  Jan                   12000                    Jihlava         
+Novotna               Eva                   12521                    Brno           
+Jahoda                Petr                   22010                    Praha         
+Bruna                  Vaclav               8000                      Praha        
+Zuda                   David                 12000                    Jihlava
