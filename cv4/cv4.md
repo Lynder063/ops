@@ -1,3 +1,23 @@
+## Table of Contents
+- [Table of Contents](#table-of-contents)
+- [Vytvořte soubor výplaty v tomto tvaru.](#vytvo-te-soubor-v-platy-v-tomto-tvaru)
+- [Vypište první a třetí sloupec](#vypi-te-prvn--a-t-et--sloupec)
+- [Vyberte řádky obsahující slovo Jihlava](#vyberte---dky-obsahuj-c--slovo-jihlava)
+- [Vypište 1. , 2. a 4. sloupec pro  řádky obsahující slovo Jihlava](#vypi-te-1---2-a-4-sloupec-pro----dky-obsahuj-c--slovo-jihlava)
+- [Vyberte všechny řádky obsahující v 4. sloupci písmeno P](#vyberte-v-echny---dky-obsahuj-c--v-4-sloupci-p-smeno-p)
+- [Vyberte všechny řádky obsahující v 4. sloupci první písmeno P](#vyberte-v-echny---dky-obsahuj-c--v-4-sloupci-prvn--p-smeno-p)
+- [Vyberte všechny pracovníky, kteří mají plat = 12000](#vyberte-v-echny-pracovn-ky--kte---maj--plat---12000)
+- [Vyberte všechny pracovníky, kteří mají plat < 12000](#vyberte-v-echny-pracovn-ky--kte---maj--plat---12000)
+- [Vyberte všechny pracovníky, kteří mají plat < 20000 a větší než 10000](#vyberte-v-echny-pracovn-ky--kte---maj--plat---20000-a-v-t---ne--10000)
+- [Vyberte všechny pracovníky, kteří jsou z Brna nebo z Jihlavy](#vyberte-v-echny-pracovn-ky--kte---jsou-z-brna-nebo-z-jihlavy)
+- [Vypište číslo řádku, na kterém je ve sloupci Petr.](#vypi-te---slo---dku--na-kter-m-je-ve-sloupci-petr)
+- [Zobrazte 2. a 4. řádek](#zobrazte-2-a-4---dek)
+- [Vypočtěte průměrný platy](#vypo-t-te-pr-m-rn--platy)
+- [Vypočtěte průměrný plat pro všechny pracovníky z Jihlavy.](#vypo-t-te-pr-m-rn--plat-pro-v-echny-pracovn-ky-z-jihlavy)
+- [Vypište maximální plat.](#vypi-te-maxim-ln--plat)
+- [Vytvořte program, který každé 2 minuty zkopíruje výpis obsahu vybraného adresáře do souboru.](#vytvo-te-program--kter--ka-d--2-minuty-zkop-ruje-v-pis-obsahu-vybran-ho-adres--e-do-souboru)
+
+
 ## Vytvořte soubor výplaty v tomto tvaru.
 ```bash
 echo "
