@@ -1,5 +1,5 @@
 # Operating Systems 2024
-## Created by Christopher Malinda
+## Created by Kryštof Malinda
 
 ## Information
 Since the teacher is an idiot, he demands that everything be done via VMs in the school's EIT computer lab.
