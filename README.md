@@ -20,7 +20,7 @@ All exercises can be found in adequate folders in this rep!
 - [x] cv1
 - [x] cv2
 - [x] cv3
-- [x] cv4
+- [x] [cv4](cv4/cv4.md)
 - [ ] cv5
 - [ ] cv6
 - [ ] cv7
