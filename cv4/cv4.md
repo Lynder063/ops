@@ -9,7 +9,7 @@ Zuda                   David                 12000                    Jihlava
 " > platy.txt
 ```
 - Zde je očekáváný output
-![Úkol 2](../assests/cv4/ukol2.png) 
+![Úkol 1](../assests/cv4/ukol1.png) 
 
 
 ## Vypište první a třetí sloupec
@@ -17,7 +17,13 @@ Zuda                   David                 12000                    Jihlava
 awk '{print $1, $3}' platy.txt
 ```
 - Zde je očekáváný output
-![Úkol 3](../assests/cv4/ukol3.png) 
+![Úkol 2](../assests/cv4/ukol2.png) 
+
+## Vyberte řádky obsahující slovo Jihlava
+```bash
+awk '/Jihlava/' platy.txt
+```
+![Úkol 3](../assests/cv4/ukol3.png)
 
 ## Vypište 1. , 2. a 4. sloupec pro  řádky obsahující slovo Jihlava
 ```bash
