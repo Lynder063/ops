@@ -17,7 +17,7 @@ chown {login}:{login} {file_name}
 ## The status of the exercises entered
 All exercises can be found in adequate folders in this rep!
 
-- [x] cv1
+- [x] [cv1](cv1/cv1.md)
 - [x] cv2
 - [x] cv3
 - [x] [cv4](cv4/cv4.md)
