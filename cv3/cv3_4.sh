@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Vytvoření nového uživatele
+# Vytvoření nového uživatele, uživatel se dá vytvořit jen pomocí sudo
 # "krystofjebuh"
 
 sudo adduser krystofjebuh
