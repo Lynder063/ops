@@ -1,0 +1,11 @@
+řadek 1
+řadek 2
+line 3
+line 4
+line 5
+line 6
+Ahoj světe!
+Toto je dočasný soubor pro práci se scripy
+Kryštof
+Kryštof Malinda
+Malinda
