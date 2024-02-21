@@ -15,7 +15,9 @@ chown {login}:{login} {file_name}
 **And he won't know anything and he'll be happy, and so complications can be avoided**
 
 ## Status of exercises
-All exercises can be found in adequate folders in this rep!
+> [!NOTE]
+ > All exercises can be found in adequate folders in this rep!
+
 
 - [x] [cv1](cv1/cv1.md)
 - [x] cv2
