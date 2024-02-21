@@ -111,7 +111,7 @@ sudo chown root text5
 pwd
 ```
 
-# Vytvoření symbolického linku k souboru text3 a ověření, že je symbolický
+## Vytvoření symbolického linku k souboru text3 a ověření, že je symbolický
 ```bash
 ln -s text3 odkaznatext3
 ls -l odkaznatext3
