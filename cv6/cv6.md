@@ -79,7 +79,7 @@ pstree
 ```bash
 gedit &
 ```
-![Úkol 11](../assests/cv6/cv11_1.png)
+![Úkol 11](../assests/cv6/ukol11_1.png)
 
 - Dáme process do pozadí
 
@@ -88,7 +88,7 @@ gedit &
 bg %1
 ```
 
-![Úkol 11](../assests/cv6/cv11_2.png)
+![Úkol 11](../assests/cv6/ukol11_2.png)
 
 - Přeneseme proces do popředí
 
@@ -96,11 +96,11 @@ bg %1
 fg %1
 ```
 
-![Úkol 11](../assests/cv6/cv11_3.png) 
+![Úkol 11](../assests/cv6/ukol11_3.png) 
 
 # Sledujte procesy v reálném času top
 
-![Úkol 12](../assests/cv6/cv12.png)
+![Úkol 12](../assests/cv6/ukol12.png)
 
 # Pojmenovaná roura
 
