@@ -1,6 +1,6 @@
 # Instalace MYSQL/MARIADB
 > [!WARNING]
-> Na instalaci balíčku nebo upgrade systému musíte být buď přihlášený jako **sudo** a nebo váš uživatel musí mít ***sudo oprávnění**
+> Na instalaci balíčku nebo upgrade systému musíte být buď přihlášený jako **sudo** a nebo váš uživatel musí mít **sudo oprávnění**
 
 - Aktualizujeme systém
 ```bash
@@ -74,7 +74,7 @@ SHOW GRANTS FOR 'malinda'@'localhost';
 ![Úkol 3](../assests/cv8/ukol3.png) 
 
 
-- A teď se musíme odhlásit z **ROOT*a
+- A teď se musíme odhlásit z **ROOT** a
 
 ```sql
 EXIT;
@@ -105,7 +105,7 @@ sudo systemctl enable httpd --now
 
 - Vytvoříme soubor `info.php`
 ```bash
-sudo nano /var/www/html/info
+sudo nano /var/www/html/info.php
 ```
 
 - A napíšeme 
