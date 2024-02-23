@@ -24,7 +24,7 @@ chown {login}:{login} {file_name}
 - [x] cv3
 - [x] [cv4](cv4/cv4.md)
 - [x] [cv5](cv5/cv5.md)
-- [ ] cv6
+- [x] [cv6](cv6/cv6.md)
 - [ ] cv7
 - [ ] cv8
 - [ ] cv9
