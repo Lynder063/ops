@@ -70,3 +70,63 @@ pstree
 ```
 
 ![Úkol 10](../assests/cv6/ukol10.png) 
+
+# Procesy na pozadí, popředí gedit, &, bg, fg, ^+Z, jobs
+
+- Spustíme Textový editor GEdit
+
+
+```bash
+gedit &
+```
+![Úkol 11](../assests/cv6/cv11_1.png)
+
+- Dáme process do pozadí
+
+
+```bash
+bg %1
+```
+
+![Úkol 11](../assests/cv6/cv11_2.png)
+
+- Přeneseme proces do popředí
+
+```bash
+fg %1
+```
+
+![Úkol 11](../assests/cv6/cv11_3.png) 
+
+# Sledujte procesy v reálném času top
+
+![Úkol 12](../assests/cv6/cv12.png)
+
+# Pojmenovaná roura
+
+- Vytvoříme routu
+
+```bash
+mkfifo roura
+```
+
+![Úkol 13_1](../assests/cv6/ukol13_1.png)
+
+- Načtení datumu do routy
+
+> [!WARNING]
+> Je nutné aby bežela na pozadí
+
+```bash
+date > roura &
+```
+
+![Úkol 13_2](../assests/cv6/ukol13_2.png) 
+
+- Zobrazení dat
+
+```bash
+cat roura
+```
+
+![Úkol 13_3](../assests/cv6/ukol13_3.png) 
