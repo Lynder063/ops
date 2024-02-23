@@ -36,7 +36,7 @@ cut -d ',' -f 1 studenti.csv
 ```
 ![Úkol 4](../assests/cv7/ukol4.png)
 
-# dělejte kopii souboru studenti.csv, nahraďte pomocí příkazu středníky pomlčkou a pomocí diff se podívejte, které řádky byly změněny.
+# Udělejte kopii souboru studenti.csv, nahraďte pomocí příkazu středníky pomlčkou a pomocí diff se podívejte, které řádky byly změněny.
 
 ```bash
 # Udělá se kopie
@@ -74,7 +74,7 @@ find /tmp -type f -size +100k
 
 # Do své složky (home) zkopírujte soubor /etc/passwd, který přejmenujete například na passwd2. V souboru passwd2 odstraňte nějaké řádky. Vytvořte skript, který projde vytvořené uživatele (/etc/passwd)  a  zjistí, rozdíl se souborem passwd2 (diff). Rozdíl se uloží do souboru rozdil.txt. Tedy zjistí, kteří uživatelé jsou v souboru /etc/passwd navíc.  
 
-- ZKopírování souboru ` /etc/passwd`
+- Zkopírování souboru ` /etc/passwd`
 
 
 ```bash
