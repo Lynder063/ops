@@ -33,11 +33,11 @@ chown {login}:{login} {file_name}
 - [ ] cv12
 
 ## Software
-**I recommend to make a virtual network served from two VMs**
+**I recommend to make a virtual network made from two VMs**
 
-- The first VM should be Linux, the distribution does not matter but [Alma Linux](https://almalinux.org/) is recommended
+- **The first VM** should be **Linux**, the distribution does not matter but [Alma Linux](https://almalinux.org/) is recommended
 
--The second VM should be Windows and it is recommended to use [Windows Server 2016 with Desktop](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016)
+- **The second VM** should be **Windows** and it is recommended to use [Windows Server 2016 with Desktop](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016)
 
 - Every script in this repository is made and tested on **Alma Linux**, but if your distribution is [RedHat based](https://en.wikipedia.org/wiki/Red_Hat_Enterprise_Linux_derivatives) there should be no complications
 
