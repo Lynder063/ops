@@ -41,4 +41,4 @@ chown {login}:{login} {file_name}
 
 - Every script in this repository is made and tested on **Alma Linux**, but if your distribution is [RedHat based](https://en.wikipedia.org/wiki/Red_Hat_Enterprise_Linux_derivatives) there should be no complications
 
-
+![VMs in hyperviser](assests/vms.png) 
