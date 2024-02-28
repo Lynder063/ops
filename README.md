@@ -28,8 +28,8 @@ chown {login}:{login} {file_name}
 - [x] [cv7](cv7/cv7.md)
 - [x] [cv8](cv8/cv8.md)
 - [x] [cv9](cv9/cv9.md)
-- [x] cv10 - *Nejasné zadání ale cv9 je spojené s cv10*
-- [x] [cv11](cv11/cv11.md) - *Odmítám nastavovat windows server, pokud by jste někdo veděl jak napište*
+- [x] cv10 - *Unclear assignment, probably cv9 is linked to cv10*
+- [x] [cv11](cv11/cv11.md) - *I don't know how to set up Windows Server as specified, I tried*
 - [x] [cv12](cv12/cv12.md) - *Not done*
 
 ## Software
