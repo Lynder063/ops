@@ -44,5 +44,4 @@ chown {login}:{login} {file_name}
 ![VMs in hyperviser](assests/vms.png)
 
 ## Issues
-Feel free to submit issues and enhancement requests.
-or contact me on Discord `lynder063`
+Feel free to submit issues and enhancement requests or contact me on Discord `lynder063`
