@@ -118,17 +118,21 @@ awk 'BEGIN {max=0} $3 > max {max=$3} END {print "Maximální plat: ", max}' plat
 ```bash
 #!/bin/bash
 
-# Definujte cestu ke zdrojovému a cílovému adresáři
-source_dir="/home/lynder063/zdroj"
-target_dir="/home/lynder063/cil"
+# Adresář, jehož obsah chceme zkopírovat
+source_dir="/cesta/k/vybranemu/adresari"
 
+# Soubor, do kterého chceme zkopírovat výpis obsahu adresáře
+target_file="/cesta/k/cilovemu/souboru.txt"
 
-# Zkopírujte obsah zdrojového adresáře do cílového adresáře
-cp -r "$source_dir"/* "$target_dir"
+# Zkopírování obsahu adresáře do cílového souboru
+ls -l "$source_dir" > "$target_file"
+
+# Zpráva o dokončení kopírování
+echo "Výpis obsahu adresáře byl zkopírován do souboru: $target_file"
 ```
 
 > [!WARNING]
-> Hodnoty `source_dir` a `target_dir` musíte upravit podle sebe a svých složek  
+> Hodnoty `source_dir` a `target_file` musíte upravit podle sebe a svých složek  
 
 - Nově vytvořenému souburu musíme přidat práva na exekuci
 ```bash
@@ -147,10 +151,4 @@ crontab -e
 */2 * * * * ./cesta/k/souboru.sh
 ```
 
-**NEBO**
 
-```bash
-*/2 * * * * cp -r /cesta/ke/zdrojovemu/adresari /cesta/k/cilovemu/adresari
-```
-- Zde je očekáváný output
-![Úkol 16](../assests/cv4/ukol16.png)
