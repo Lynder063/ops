@@ -45,4 +45,4 @@ chown {login}:{login} {file_name}
 
 ## Issues
 Feel free to submit issues and enhancement requests.
-
+or contact me on Discord `lynder063`
