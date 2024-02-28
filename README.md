@@ -28,9 +28,9 @@ chown {login}:{login} {file_name}
 - [x] [cv7](cv7/cv7.md)
 - [x] [cv8](cv8/cv8.md)
 - [x] [cv9](cv9/cv9.md)
-- [ ] cv10
-- [ ] cv11
-- [ ] cv12
+- [x] cv10 - *Nejasné zadání ale cv9 je spojené s cv10*
+- [ ] cv11 - *Odmítám nastavovat windows server, pokud by jste někdo veděl jak napište*
+- [x] [cv12](cv12/cv12.md)
 
 ## Software
 **I recommend to make a virtual network made from two VMs**
