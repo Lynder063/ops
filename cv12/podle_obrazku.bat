@@ -1,16 +1,36 @@
 @echo off
 
-rem Zobrazit zprávu
+rem Zobrazení zprávy
+
 echo Ahoj, vitam te zpatky!
 
-rem Získat datum a čas
-rem (Použijte "rem" před řádkem, který nechcete spustit)
-rem set "datum=%DATE:~0,4%%DATE:~5,2%%DATE:~8,2%"
-rem set "cas=%TIME:~0,2%%TIME:~3,2%"
+rem Zobrazení data a času
 
-rem Zobrazit datum a čas
-rem (Použijte "rem" před řádkem, který nechcete spustit)
-rem echo Dnes je: %datum% %cas%
+rem Nahraďte "21.03.2009 18:12:25,25" aktuálním datem a časem
+set "datum=21.03.2009 18:12:25,25"
+echo Dnes je: %datum%
 
-rem Čekat na stisk klávesy
+rem Počkejte na stisk klávesy
+
 pause
+
+rem Vymažte obrazovku
+
+cls
+
+rem Zobrazte prázdné řádky
+
+echo.
+echo.
+
+rem Zobrazte hvězdičky
+
+echo ***********************************
+
+rem Zobrazte prázdný řádek
+
+echo.
+
+rem Ukončete dávkový soubor
+
+exit
