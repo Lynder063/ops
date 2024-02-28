@@ -2,7 +2,7 @@
 ## Created by Kryštof Malinda
 
 ## Information
-Since the teacher is an idiot, he demands that everything be done via VMs in the school's EIT computer lab.
+Since the teaacher demands that everything be done via VMs in the school's EIT computer lab.
 So after communicating with the teacher, who absolutely did not want to cooperate, he told me in a maximum annoyance that it could be done from his own PC.
 
 You can just get around that by putting 
@@ -31,4 +31,14 @@ chown {login}:{login} {file_name}
 - [ ] cv10
 - [ ] cv11
 - [ ] cv12
+
+## Software
+**I recommend to make a virtual network served from two VMs**
+
+- The first VM should be Linux, the distribution does not matter but [Alma Linux](https://almalinux.org/) is recommended
+
+-The second VM should be Windows and it is recommended to use [Windows Server 2016 with Desktop](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016)
+
+- Every script in this repository is made and tested on **Alma Linux**, but if your distribution is [RedHat based](https://en.wikipedia.org/wiki/Red_Hat_Enterprise_Linux_derivatives) there should be no complications
+
 
