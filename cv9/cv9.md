@@ -83,7 +83,7 @@ sudo restorecon -Rv /var/samba/vas_login
 
 # Připojení přes Windows
 > [!NOTE]
-> Aby jste se mohli připojit musí být zapnuté Linux VM i Windows VM zároveň
+> Aby jste se mohli připojit musí být zapnuté Linux VM i Windows VM zároveň.
 > Abychom se připojili z Windows na Linux samba tak musíme mít tyto dvě VMs v jedné síti a musíme znát jejich IP adresy
 
 - Na našem Windows si otevřeme **File explorer**
