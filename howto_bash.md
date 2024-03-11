@@ -202,7 +202,7 @@ do
 done
 ```
 
-## Util loop
+## Until loop
 
 ```bash
 until [ <some test> ]
