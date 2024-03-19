@@ -19,11 +19,15 @@ groups
 
 # b za každý řádek přidá volný řádek
 
-???????????????
+```bash
+sed G jmena.txt
+```
 
 # Na začátky desáté až dvacáté řádky souboru jmena.txt přidejte znak #. 
 
-????
+```bash
+sed '10,20 s/^/#/' jmena.txt
+```
 
 # Pomocí příkazu najděte soubor jmena.txt v adresáři /home i v podadresářích
 
