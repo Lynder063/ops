@@ -27,7 +27,7 @@ chown {login}:{login} {file_name}
 - [x] [cv6](cv6/cv6.md)
 - [x] [cv7](cv7/cv7.md)
 - [x] [cv8](cv8/cv8.md)
-- [x] [cv9](cv9/cv9.md)
+- [x] [cv9](cv9/cv9.md) [Speedrun of this](https://youtu.be/ECHbx_mDUpk)
 - [x] cv10 - *Unclear assignment, probably cv9 is linked to cv10*
 - [x] [cv11](cv11/cv11.md) - *I don't know how to set up Windows Server as specified, I tried*
 - [x] [cv12](cv12/cv12.md) - *Not done*
