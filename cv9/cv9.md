@@ -72,7 +72,7 @@ sudo systemctl restart firewalld
 - Abychom mohli zapisovat do složky musíme upravit SELinuxu
 ```bash
 sudo setsebool -P samba_enable_home_dirs on
-sudo setsebool -P samba_export_all_rw only
+sudo setsebool -P samba_export_all_rw on
 ```
 
 - Nastavíme správný SELinux kontext pro naší složku
