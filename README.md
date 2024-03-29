@@ -2,6 +2,9 @@
 ## Created by Kryštof Malinda
 
 ## Information
+> [!WARNING]
+> The teacher decided to change the assignment. But he changes it at the beginning of every class. Which is beyond me, because if he wanted to change the assignment, he could have done it before the semester started. So if someone reports a change and I have time, I'll make the adjustment. Otherwise, I have more important things to do. But he said that if we're already done ahead of time, it's okay if we turn in the old assignment
+
 Since the teaacher demands that everything be done via VMs in the school's EIT computer lab.
 So after communicating with the teacher, who absolutely did not want to cooperate, he told me in a maximum annoyance that it could be done from his own PC.
 
