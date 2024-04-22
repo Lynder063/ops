@@ -1,0 +1,692 @@
+\documentclass{article}
+
+\usepackage[czech]{babel}
+
+\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{codeyellow}{RGB}{255,255,102}
+
+\lstdefinestyle{mystyle}{
+    language=Bash,
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{codepurple},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize\ttfamily,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    frame=single,
+    framerule=0pt,
+    framexleftmargin=5pt,
+    framexrightmargin=5pt,
+    framextopmargin=5pt,
+    framexbottommargin=5pt,
+    rulecolor=\color{backcolour},
+    xleftmargin=8pt,
+    xrightmargin=0pt,
+    % Add these lines for proper inline code highlighting
+    escapeinside={(*@}{@*)}, % if you want to add LaTeX within your code
+    moredelim=[is][\color{red}\ttfamily]{|}{|}, % for inline code
+    extendedchars=true, % allows non-ASCII characters, such as ü, ä, etc.
+    literate=%
+        {á}{{\'a}}1
+        {í}{{\'i}}1
+        {é}{{\'e}}1
+        {ý}{{\'y}}1
+        {ó}{{\'o}}1
+        {ú}{{\'u}}1
+        {ř}{{\v{r}}}1
+        {č}{{\v{c}}}1
+        {ě}{{\v{e}}}1
+        {š}{{\v{s}}}1
+        {ť}{{\v{t}}}1
+        {ž}{{\v{z}}}1
+        {ů}{{\r{u}}}1
+        {Á}{{\'A}}1
+        {Í}{{\'I}}1
+        {É}{{\'E}}1
+        {Ý}{{\'Y}}1
+        {Ó}{{\'O}}1
+        {Ú}{{\'U}}1
+        {Ř}{{\v{R}}}1
+        {Č}{{\v{C}}}1
+        {Ě}{{\v{E}}}1
+        {Š}{{\v{S}}}1
+        {Ť}{{\v{T}}}1
+        {Ž}{{\v{Z}}}1
+        {Ů}{{\r{U}}}1
+}
+
+\lstset{style=mystyle}
+
+\title{Poznámky k započtovému testu z Operačních systémů}
+\author{Malinda Krystof}
+
+\begin{document}
+\maketitle
+
+
+\section{Zadání z předchozých let}
+\subsection{Zadání 1}
+\begin{enumerate}
+  \item Vytvořte soubor male.txt, kde bude text psaný malými písmeny. Vytvořte script velka.sh, který změní velikosti písmen v souboru male.txt a uloží do souboru velke.txt
+\begin{lstlisting}[caption=Vytvoříme soubor male.txt]
+  echo "toto je náhody text do souboru male.txt" > male.txt
+\end{lstlisting}
+\begin{lstlisting}[caption=Jak by měl vypadat velka.sh]
+#!/bin/bash
+
+# Kontrola, zda existuje soubor male.txt
+if [ ! -f male.txt ]; then
+    echo "Soubor male.txt neexistuje."
+    exit 1
+fi
+
+# Převod malých písmen na velká a uložení do souboru velke.txt
+tr '[:lower:]' '[:upper:]' < male.txt > velke.txt
+
+echo "Převod na velká písmena byl dokončen."
+\end{lstlisting}
+\begin{lstlisting}
+  chmod +x velka.sh # Přidáme execute permission, aby se script dal spustit
+  ./velka.sh # Spustíme script
+  cat velke.txt # Zkontrolujeme output scriptu
+\end{lstlisting}
+  \item Vytvořte soubor ceny v tomto tvaru, kde druhý sloupce je oddělen a třetí platy v jednotlivých pracovníků. Napište skript secti.sh, který sečte všechny platy pro pracovníky oddělení 1.
+\begin{lstlisting}
+  echo "
+  Jahoda 1  22010
+  Bruna 2 80000
+  Zuda  1 12000
+  " > ceny.txt
+\end{lstlisting}
+\begin{lstlisting}[caption=skript secti.sh]
+#!/bin/bash
+
+# Kontrola, zda existuje soubor ceny.txt
+if [ ! -f ceny.txt ]; then
+    echo "Soubor ceny.txt neexistuje."
+    exit 1
+fi
+
+# Sečtení platů pro pracovníky oddělení 1
+suma=0
+while read -r jmeno oddeleni plat; do
+    if [ "$oddeleni" -eq 1 ]; then
+        suma=$((suma + plat))
+    fi
+done < ceny.txt
+
+echo "Celková suma platů pro pracovníky oddělení 1 je: $suma"
+\end{lstlisting}
+\item V Linuxu vytvořte skript s názvem adresare, který z aktuálního adresáře, ve kterém jsou adresáře i soubory, vypíše seznam všěch adresářů do souboru
+\begin{lstlisting}
+  #!/bin/bash
+
+  # Získání seznamu adresářů v aktualní adresáři
+  find . type -d > seznam_adresaru.txt
+
+  echo "Seznam adresařů byl uložen do souboru seznam_adresaru.txt"
+\end{lstlisting}
+\end{enumerate}
+
+\section{Věci s přednášek}
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Příkaz} & \textbf{Popis} & \textbf{Příklad} \\
+\hline
+\texttt{ls} & Vypíše obsah aktuálního adresáře. & \texttt{ls -l} \\
+\hline
+\texttt{cd} & Změní aktuální pracovní adresář. & \texttt{cd /home/user} \\
+\hline
+\texttt{mkdir} & Vytvoří nový adresář. & \texttt{mkdir novy\_adresar} \\
+\hline
+\texttt{rm} & Smaže soubor nebo adresář. & \texttt{rm soubor.txt} \\
+\hline
+\texttt{cp} & Zkopíruje soubor nebo adresář. & \texttt{cp soubor.txt /cesta/} \\
+\hline
+\texttt{mv} & Přesune nebo přejmenuje soubor nebo adresář. & \texttt{mv soubor.txt novy\_soubor.txt} \\
+\hline
+\texttt{cat} & Vypíše obsah souboru. & \texttt{cat soubor.txt} \\
+\hline
+\texttt{chmod} & Změní oprávnění souboru. & \texttt{chmod +x skript.sh} \\
+\hline
+\texttt{pwd} & Zobrazí aktuální pracovní adresář. & \texttt{pwd} \\
+\hline
+\texttt{rmdir} & Smaže prázdný adresář. & \texttt{rmdir prazdny\_adresar} \\
+\hline
+\texttt{find} & Vyhledá soubory a adresáře. & \texttt{find /home -name "*.txt"} \\
+\hline
+\texttt{tail} & Vypíše posledních n řádků souboru. & \texttt{tail -n 10 soubor.txt} \\
+\hline
+\texttt{head} & Vypíše prvních n řádků souboru. & \texttt{head -n 5 soubor.txt} \\
+\hline
+\texttt{grep} & Vyhledá řetězec v souboru. & \texttt{grep "pattern" soubor.txt} \\
+\hline
+\texttt{wget} & Stáhne soubor z internetu. & \texttt{wget url} \\
+\hline
+\texttt{tar} & Archivuje nebo rozbaluje soubory v tar archivu. & \texttt{tar -czf archiv.tar.gz adresar} \\
+\hline
+\texttt{df} & Zobrazí informace o dostupném diskovém prostoru. & \texttt{df -h} \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Oprávnění v Linuxu}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Číselná forma} & \textbf{Symbolická forma} & \textbf{Popis} \\
+\hline
+0 & --- & Žádné oprávnění \\
+\hline
+1 & --x & Proveditelné \\
+\hline
+2 & -w- & Zapisovatelné \\
+\hline
+3 & -wx & Zapisovatelné a proveditelné \\
+\hline
+4 & r-- & Čitelné \\
+\hline
+5 & r-x & Čitelné a proveditelné \\
+\hline
+6 & rw- & Čitelné a zapisovatelné \\
+\hline
+7 & rwx & Čitelné, zapisovatelné a proveditelné \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Cvičení 1}
+\subsection{Vytvořte nového uživatele s názvem vašeho loginu a nastavte mu heslo: Password1*}
+Přepneme se do sudo
+\begin{lstlisting}[language=bash]
+su -i
+\end{lstlisting}
+Vytvoříme nového uživatele
+\begin{lstlisting}[language=bash]
+useradd {vas_login}
+\end{lstlisting}
+A přidáme požadované heslo Password1*
+\begin{lstlisting}[language=bash]
+passwd {vas_login}
+\end{lstlisting}
+
+\subsection{Přihlaste se jako vas-login. V adresari /home/login vytvořte pět souborů s těmito právy}
+\begin{itemize}
+    \item text1 rwx r-x rwx
+    \item text2 r- - rwx -w
+    \item text3 rwx rwx rwx
+    \item text4 r-x - -x r- -
+    \item text5.. rwx - -x rwx
+\end{itemize}
+
+Příhlásíme se
+\begin{lstlisting}[language=bash]
+su {vas_login}
+\end{lstlisting}
+Musíme se přepnout do /home/{login}
+\begin{lstlisting}[language=bash]
+cd $HOME
+\end{lstlisting}
+\textbf{nebo můžeme použít příkaz}
+\begin{lstlisting}[language=bash]
+cd /home/{vas_login}
+\end{lstlisting}
+Vytvoříme pět souboru
+\begin{lstlisting}[language=bash]
+chmod 751 text1
+chmod 704 text2
+chmod 777 text3
+chmod 511 text4
+chmod 762 text5
+\end{lstlisting}
+\subsection{V domovském adresáři uživatele vas login vytvořte adresář pokus s těmito právy rwxr--r--}
+Vytvořte adresář
+\begin{lstlisting}[language=bash]
+mkdir pokus
+\end{lstlisting}
+Nastavíme práva
+\begin{lstlisting}[language=bash]
+chmod 744 pokus
+\end{lstlisting}
+Zkopírujeme soubor text1 do složky pokus a přepneme se do složky pokus
+\begin{lstlisting}[language=bash]
+cp text1 pokus/
+cd pokus/
+\end{lstlisting}
+Nastavíme požadovné práva
+\begin{lstlisting}[language=bash]
+chmod 644 ../pokus
+\end{lstlisting}
+\subsection{Změna vlastníka souboru text5 na root}
+\begin{lstlisting}[language=bash]
+sudo chown root text5
+\end{lstlisting}
+\subsection{Vypsání celé cesty aktuálního adresáře}
+\begin{lstlisting}[language=bash]
+pwd
+\end{lstlisting}
+\subsection{Vytvoření symbolického linku k souboru text3 a ověření, že je symbolický}
+\begin{lstlisting}[language=bash]
+ln -s text3 odkaznatext3
+ls -l odkaznatext3
+\end{lstlisting}
+\subsection{Výpis souborů v adresáři /etc podle zadaných kritérií}
+\begin{lstlisting}[language=bash]
+cd /etc
+ls a*
+ls m*f
+ls m*b*m*c*f
+\end{lstlisting}
+\subsection{Spuštění programu mc a zjištění čísla jeho procesu}
+\begin{lstlisting}[language=bash]
+mc
+pgrep mc
+\end{lstlisting}
+\subsection{Zrušení procesu Midnight Commander}
+\begin{lstlisting}[language=bash]
+kill PID 
+#(kde PID je cislo procesu ziskane z predchoziho prikazu)
+\end{lstlisting}
+\subsection{Vytvoření souboru adresy v domovském adresáři a zadání obsahu}
+\begin{lstlisting}[language=bash]
+cd ~
+\end{lstlisting}
+\begin{lstlisting}[language=bash]
+cat > adresy
+Petr Bily 123451
+Petra Cerna 123213
+Jan Vlk 151122
+Jiri Cila 122321
+\end{lstlisting}
+A zmáčkneme \textbf{Ctrl + D}
+\subsection{Zobrazení obsahu souboru adresy}
+\begin{lstlisting}[language=bash]
+cat adresy
+\end{lstlisting}
+\subsection{Výpis řádků souboru obsahujících slovo \textbf{Petr}}
+\begin{lstlisting}[language=bash]
+grep "Petr Bily" adresy
+\end{lstlisting}
+\subsection{Výpis řádků souboru, které neobsahují slovo \textbf{Petr}}
+\begin{lstlisting}[language=bash]
+grep -v Petr adresy
+\end{lstlisting}
+\subsection{Výpis řádků souboru obsahujících písmeno \textbf{J} a neobsahujících \textbf{V}}
+\begin{lstlisting}[language=bash]
+grep "J" adresy | grep -v "V"
+\end{lstlisting}
+\subsection{Změna malých písmen na velká v souboru adresy a uložení do souboru adresy2}
+\begin{lstlisting}[language=bash]
+tr '[:lower:]' '[:upper:]' < adresy > adresy2
+\end{lstlisting}
+\section{Cvičení 2}
+\lstinputlisting[language=bash]{cv2/script1.sh}
+\lstinputlisting[language=bash]{cv2/script2.sh}
+\lstinputlisting[language=bash]{cv2/script3.sh}
+\lstinputlisting[language=bash]{cv2/script4.sh}
+\lstinputlisting[language=bash]{cv2/script5.sh}
+
+\section{Cvičení 3}
+\lstinputlisting[language=bash]{cv3/cv3_1.sh}
+\lstinputlisting[language=bash]{cv3/cv3_2.sh}
+\lstinputlisting[language=bash]{cv3/cv3_3.sh}
+\lstinputlisting[language=bash]{cv3/cv3_4.sh}
+\lstinputlisting[language=bash]{cv3/cv3_5.sh}
+\section{Cvičení 4}
+\subsection{Vytvoření souboru výplaty}
+
+\begin{lstlisting}
+echo "
+Novak                  Jan                   12000                    Jihlava         
+Novotna               Eva                   12521                    Brno           
+Jahoda                Petr                   22010                    Praha         
+Bruna                  Vaclav               8000                      Praha        
+Zuda                   David                 12000                    Jihlava
+" > platy.txt
+\end{lstlisting}
+
+\subsection{Vypsání prvního a třetího sloupce}
+
+\begin{lstlisting}
+awk '{print $1, $3}' platy.txt
+\end{lstlisting}
+
+\subsection{Výběr řádků obsahujících slovo Jihlava}
+
+\begin{lstlisting}
+awk '/Jihlava/' platy.txt
+\end{lstlisting}
+
+\subsection{Vypsání prvního, druhého a čtvrtého sloupce pro řádky obsahující slovo Jihlava}
+
+\begin{lstlisting}
+awk '/Jihlava/{print $1, $2, $4}' platy.txt
+\end{lstlisting}
+
+\subsection{Výběr všech řádků obsahujících v 4. sloupci písmeno P}
+
+\begin{lstlisting}
+awk '$4 ~ /P/' platy.txt
+\end{lstlisting}
+
+\subsection{Výběr všech řádků obsahujících v 4. sloupci první písmeno P}
+
+\begin{lstlisting}
+awk '$4 ~ /^P/' platy.txt
+\end{lstlisting}
+
+\subsection{Výběr všech pracovníků, kteří mají plat 12000}
+
+\begin{lstlisting}
+awk '$3 == 12000' platy.txt
+\end{lstlisting}
+
+\subsection{Výběr všech pracovníků, kteří mají plat menší než 12000}
+
+\begin{lstlisting}
+awk '$3 < 12000' platy.txt
+\end{lstlisting}
+
+\subsection{Výběr všech pracovníků, kteří mají plat menší než 20000 a větší než 10000}
+
+\begin{lstlisting}
+awk '$3 < 20000 && $3 > 10000' platy.txt
+\end{lstlisting}
+
+\subsection{Výběr všech pracovníků, kteří jsou z Brna nebo z Jihlavy}
+
+\begin{lstlisting}
+awk '$4 == "Brno" || $4 == "Jihlava"' platy.txt
+\end{lstlisting}
+
+\subsection{Vypsání čísla řádku, na kterém je ve sloupci jméno Petr}
+
+\begin{lstlisting}
+awk '$2 == "Petr" {print NR}' platy.txt
+\end{lstlisting}
+
+\subsection{Zobrazení 2. a 4. řádku}
+
+\begin{lstlisting}
+awk 'NR==2 || NR==4' platy.txt
+\end{lstlisting}
+
+\subsection{Vypočtení průměrného platu}
+
+\begin{lstlisting}
+awk '{sum+=$3} END {print "Průměrný plat: ", sum/NR}' platy.txt
+\end{lstlisting}
+
+\subsection{Vypočtení průměrného platu pro všechny pracovníky z Jihlavy}
+
+\begin{lstlisting}
+awk '$4 == "Jihlava" {sum+=$3; count++} END {print "Průměrný plat pro pracovníky z Jihlavy: ", sum/count}' platy.txt
+\end{lstlisting}
+
+\subsection{Vypsání maximálního platu}
+
+\begin{lstlisting}
+awk 'BEGIN {max=0} $3 > max {max=$3} END {print "Maximální plat: ", max}' platy.txt
+\end{lstlisting}
+
+\subsection{Vytvoření programu, který každé 2 minuty zkopíruje výpis obsahu vybraného adresáře do souboru}
+
+\begin{lstlisting}[language=Bash]
+#!/bin/bash
+
+# Adresář, jehož obsah chceme zkopírovat
+source_dir="/cesta/k/vybranemu/adresari"
+
+# Soubor, do kterého chceme zkopírovat výpis obsahu adresáře
+target_file="/cesta/k/cilovemu/souboru.txt"
+
+# Zkopírování obsahu adresáře do cílového souboru
+ls -l "$source_dir" > "$target_file"
+
+# Zpráva o dokončení kopírování
+echo "Výpis obsahu adresáře byl zkopírován do souboru: $target_file"
+\end{lstlisting}
+\section{Cvičení 5}
+\subsection{V systému Linux vytvořte skript s názvem adresare, který vypíše počet adresářů v aktuálním adresáři do souboru}
+\lstinputlisting[language=bash, caption=Script adresare.sh]{cv5/adresare.sh}
+
+\subsection{V Linuxu vytvořte adresář cv5 a v něm vytvořte 3 soubory první, druhý, třetí. Dále v něm vytvořte skript s názvem prejmenuj, který dá všem souborům příponu html}
+\begin{lstlisting}
+  mkdir cv5 #Vytvoří složku
+  touch první druhý třetí #vytvoří soubory
+\end{lstlisting}
+\lstinputlisting[language=bash, caption=Script prejmenuj.sh]{cv5/cv5/prejmenuj.sh}
+\subsection{Přihlaste se do Linuxu pod účtem root. Vytvořte skript, který vytvoří nového uživatele a nastaví mu heslo}
+\begin{lstlisting}[caption=Přihlasíme se jako root]
+  su -i
+\end{lstlisting}
+\begin{lstlisting}[caption=Můžeme zkontrolovat za koho jsme přihlášení]
+  whoami
+\end{lstlisting}
+\lstinputlisting[caption=Script novy uzivatel.sh]{cv5/novy_uzivatel.sh}
+\subsection{V Linuxu vytvořte skript s názvem balíčky, který po spuštění vypíše všechny nainstalované balíčky, které začínají na php. Pokud tam žádný balíček není, nainstalujte ho}
+\lstinputlisting[caption=Script balicky.sh]{cv5/balicky.sh}
+\subsection{V Linuxu vytvořte skript s názvem existuje, který zjistí , zda je nějaký soubor existuje nebo ne. Výsledkem bude text: „existuje“ nebo „neexistuje“.}
+\lstinputlisting[caption=Script existuje.sh]{cv5/existuje.sh}
+\section{Cvičení 6}
+\subsection{Napište příkaz, který vypíše vaše aktuální UID.}
+
+\begin{lstlisting}
+id -u
+\end{lstlisting}
+
+\subsection{Napište příkaz, který vypíše seznam skupin, v nichž se nacházíte.}
+
+\begin{lstlisting}
+groups
+\end{lstlisting}
+
+\subsection{Vytvořte soubor jmena.txt s 21 jmény. Z výstupu jmena.txt vypište jen sudé řádky a  na začátky lichých řádek souboru jmena.txt vložte znak „l", na začátky sudých řádek vložte znak „s".}
+
+\lstinputlisting{cv6/sude_liche.sh}
+
+\subsection{b za každý řádek přidá volný řádek}
+
+\begin{lstlisting}
+sed G jmena.txt
+\end{lstlisting}
+
+\subsection{Na začátky desáté až dvacáté řádky souboru jmena.txt přidejte znak \#.}
+
+\begin{lstlisting}
+sed '10,20 s/^/#/' jmena.txt
+\end{lstlisting}
+
+\subsection{Pomocí příkazu najděte soubor jmena.txt v adresáři /home i v podadresářich.}
+
+\begin{lstlisting}
+find /home -name "jmena.txt"
+\end{lstlisting}
+
+\subsection{Pomocí příkazu najděte v adresáři /home i v podadresarich všechny soubory začínající j s příponou .txt}
+
+\begin{lstlisting}
+find /home -type f -name "j*.txt"
+\end{lstlisting}
+
+\subsection{Pomocí příkazu najděte v adresáři /home i v podadresářích vše, co bylo změněno před 7 dny.}
+
+\begin{lstlisting}
+find /home -type f -mtime +7
+\end{lstlisting}
+
+\subsection{Zjištění rodičovského procesu}
+
+\subsubsection{Spusťte zobrazení procesů}
+
+\begin{lstlisting}
+ps -l
+\end{lstlisting}
+
+\subsubsection{Jaký je rodičovský proces procesu ps?}
+
+Měl by to být uživatelský shell.
+
+\subsection{Zobrazte celou stromovou strukturu všech procesů operačního systému.}
+
+\begin{lstlisting}
+pstree
+\end{lstlisting}
+
+\subsection{Procesy na pozadí, popředí gedit}
+
+\subsubsection{Spustíme Textový editor GEdit}
+
+\begin{lstlisting}
+gedit &
+\end{lstlisting}
+
+\subsubsection{Dáme process do pozadí}
+
+\begin{lstlisting}
+bg %1
+\end{lstlisting}
+
+\subsubsection{Přeneseme proces do popředí}
+
+\begin{lstlisting}
+fg %1
+\end{lstlisting}
+
+\subsection{Sledujte procesy v reálném čase top}
+
+\begin{lstlisting}
+top
+\end{lstlisting}
+
+\subsection{Pojmenovaná roura}
+
+\subsubsection{Vytvoříme routu}
+
+\begin{lstlisting}
+mkfifo roura
+\end{lstlisting}
+
+\subsubsection{Načtení datumu do routy}
+
+\begin{lstlisting}
+date > roura &
+\end{lstlisting}
+
+\subsubsection{Zobrazení dat}
+
+\begin{lstlisting}
+cat roura
+\end{lstlisting}
+
+\section{Cvičení 7}
+\subsection{Pomocí příkazu vytvořte soubor se jménem „datum". Do tohoto souboru vložte pomocí příkazu aktuální datum.}
+
+\begin{lstlisting}
+date > datum
+\end{lstlisting}
+
+\subsection{Vypište deset největších souborů a pak deset nejmenších souborů v adresáři /etc}
+
+\subsubsection{Největší soubory}
+
+\begin{lstlisting}
+ls -lS /etc | head -n 11
+\end{lstlisting}
+
+\subsubsection{Nejmenší soubory}
+
+\begin{lstlisting}
+ls -lSr /etc | head -n 11
+\end{lstlisting}
+
+\subsection{V adresáři /usr/bin najděte soubor, který byl modifikován naposledy.}
+
+\begin{lstlisting}
+ls -lt /usr/bin | head -n 2
+\end{lstlisting}
+
+\subsection{Ze souboru studenti.csv vypište jen první sloupec, tj. sloupec s příjmeními (použijte find, případně cut).}
+
+\begin{lstlisting}
+cut -d ',' -f 1 studenti.csv
+\end{lstlisting}
+
+\subsection{Udělejte kopii souboru studenti.csv, nahraďte pomocí příkazu středníky pomlčkou a pomocí diff se podívejte, které řádky byly změněny.}
+
+\begin{lstlisting}
+# Uděláme kopii
+cp studenti.csv studenti_copy.csv 
+
+# Nahradíme ;, -
+sed -i 's/;/-/g' studenti_copy.csv
+
+# Ukážeme rozdíl
+diff studenti.csv studenti_copy.csv
+\end{lstlisting}
+
+\subsection{Rozdělte příkazem  studenti.csv soubor na kusy po pěti řádcích (split).}
+
+\begin{lstlisting}
+split -l 5 studenti.csv studenti_chunk_
+\end{lstlisting}
+
+\subsection{Napište příkaz, který vypíše počet všech (pro vás viditelných) adresářů v podstromu /etc}
+
+\begin{lstlisting}
+find /etc -type d | wc -l
+\end{lstlisting}
+
+\subsection{V podstromu adresáře /tmp najděte všechny soubory, které jsou větší než sto kilobyte (find).}
+
+\begin{lstlisting}
+find /tmp -type f -size +100k
+\end{lstlisting}
+
+\subsection{Do své složky (home) zkopírujte soubor /etc/passwd, který přejmenujete například na passwd2. V souboru passwd2 odstraňte nějaké řádky. Vytvořte skript, který projde vytvořené uživatele (/etc/passwd)  a  zjistí, rozdíl se souborem passwd2 (diff). Rozdíl se uloží do souboru rozdil.txt. Tedy zjistí, kteří uživatelé jsou v souboru /etc/passwd navíc.}
+
+\begin{lstlisting}
+# Zkopírování souboru /etc/passwd
+cp /etc/passwd ~/passwd2
+
+# Odstranímě nějaké řádky (vybral jsem 2 a 5)
+sed -i '2d;5d' passwd2
+
+# Spustíme script
+\end{lstlisting}
+\lstinputlisting[caption=Script který spustíme]{cv7/porovnani.sh}
+
+\subsection{Pomocí příkazu vypište verzi OS linux (číslo jádra a další informace).}
+
+\begin{lstlisting}
+uname -a
+\end{lstlisting}
+
+
+\end{document}
