@@ -151,6 +151,22 @@ echo "Celková suma platů pro pracovníky oddělení 1 je: $suma"
 
   echo "Seznam adresařů byl uložen do souboru seznam_adresaru.txt"
 \end{lstlisting}
+\item Napište skript, kterému se zadají 3 čísla jako parametr. Po zadání těchto čísel se tato čísla sečtou a výsledek se uloží do souboru.
+\begin{lstlisting}
+#!/bin/bash
+
+number1=$1
+number2=$2
+number3=$3
+
+# Výpočet součtu
+sum=$((number1 + number2 + number3))
+
+# Uložení výsledku do souboru
+echo "Součet čísel $number1, $number2 a $number3 je: $sum" > soucet.txt
+
+echo "Součet byl uložen do souboru 'soucet.txt'."
+\end{lstlisting}
 \end{enumerate}
 \subsection{Zadání z 23.04.2024}
 \begin{enumerate}
