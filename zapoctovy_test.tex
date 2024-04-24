@@ -90,7 +90,6 @@
 
 
 \section{Zadání z předchozých let}
-\subsection{Zadání 1}
 \begin{enumerate}
   \item Vytvořte soubor male.txt, kde bude text psaný malými písmeny. Vytvořte script velka.sh, který změní velikosti písmen v souboru male.txt a uloží do souboru velke.txt
 \begin{lstlisting}[caption=Vytvoříme soubor male.txt]
@@ -167,10 +166,8 @@ echo "Součet čísel $number1, $number2 a $number3 je: $sum" > soucet.txt
 
 echo "Součet byl uložen do souboru 'soucet.txt'."
 \end{lstlisting}
-\end{enumerate}
-\subsection{Zadání z 23.04.2024}
-\begin{enumerate}
-  \item V textovém souboru jsou \textit{(vytvořte)} pod sebou názvy 3 souborů a jejich různé přípony oddělené tečkou. Pomocí skriptu vypište tyto přípony do externího souboru s názvem externí
+
+\item V textovém souboru jsou \textit{(vytvořte)} pod sebou názvy 3 souborů a jejich různé přípony oddělené tečkou. Pomocí skriptu vypište tyto přípony do externího souboru s názvem externí
 \begin{lstlisting}
 #!/bin/bash
 
@@ -211,6 +208,18 @@ check_write_permission
 history -c && history -w 
 # Toto smaže historii našeho shellu (bash)
 \end{lstlisting}
+\item Vytvořte skript login\_1.sh \textit{(login je vaše přijmení či jeho část)}, který vytvoří textový soubor \textbf{jména.txt} a bude obsahovat alespoň 5 křestních jmen na každý řádek jedno a jako poslední jméno bude vaše jméno
+\begin{lstlisting}
+#!/bin/bash
+
+echo "Petr
+      Martin
+      Pavel
+      Dominik
+      Kryštof
+" > jmena.txt
+\end{lstlisting}
+
 \end{enumerate}
 \section{Věci s přednášek}
 \subsection{AWK}
